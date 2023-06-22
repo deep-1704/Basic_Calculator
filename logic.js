@@ -84,14 +84,19 @@ allclearbtn.addEventListener("click",function(){
 
 let delbtn = document.querySelector("#del");
 delbtn.addEventListener("click",function(){
-    let inp = s2.innerHTML;
-    console.log(inp);
-    s2.innerHTML = inp.substring(0,(inp.length) - 1);
-    if(opr == ""){
-        o1 = s2.innerHTML;
-    }
-    else{
-        o2 = s2.innerHTML;
+    if(o1 != ""){
+        if(opr != ""){
+            let o21 = parseInt(o2);
+            o21 = Math.floor(o21/10);
+            o2 = o21;
+            s2.innerHTML = `${o2}`;
+        }
+        else{
+            let o11 = parseInt(o1);
+            o11 = Math.floor(o11/10);
+            o1 = o11;
+            s2.innerHTML = `${o1}`;
+        }
     }
 });
 
