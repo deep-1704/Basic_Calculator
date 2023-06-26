@@ -9,13 +9,18 @@ let s2 = document.querySelector("#s2");
 let numkey = document.querySelectorAll(".num");
 for(let n of numkey){
     n.addEventListener("click",function(){
-        if(opr == ""){
-            o1 += n.innerHTML;
-            s2.innerHTML = `${o1}`;
+        if(s2.innerHTML.length <= 9){
+            if(opr == ""){
+                o1 += n.innerHTML;
+                s2.innerHTML = `${o1}`;
+            }
+            else{
+                o2 += n.innerHTML;
+                s2.innerHTML = `${o2}`;
+            }
         }
         else{
-            o2 += n.innerHTML;
-            s2.innerHTML = `${o2}`;
+            alert("Input limit reached!");
         }
     });
 }
